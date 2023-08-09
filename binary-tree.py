@@ -74,7 +74,7 @@
 a = "-10"
 b = "5"
 
-stack = []
+stack = [1,4,3]
 
-stack.append(int(a)*int(b))
+stack.sort()
 print(stack)
