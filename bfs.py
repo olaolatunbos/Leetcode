@@ -1,9 +1,8 @@
 from collections import deque
-def floodFill(image, sr, sc, color):
-    visited = set() # (i, j)
+def breadthFirstSearch(matrix):
+    visited = set() #(i, j)
     directions = [[0,1], [0,-1], [1, 0], [-1, 0]]
-    rows, cols = len(image), len(image[0])
-    original_color = image[sr][sc]
+    rows, cols = len(mat), len(mat[0])
 
     def bfs(i, j):
         # queue
@@ -18,22 +17,22 @@ def floodFill(image, sr, sc, color):
             # add neighbours to queue
             for direction in directions:
                 next_i, next_j = curr_i + direction[0], curr_j + direction[1]
-                if 0 <= next_i < rows and 0 <= next_j < cols and image[next_i][next_j] == original_color:
+                if 0 <= next_i < rows and 0 <= next_j < cols:
                     queue.append((next_i, next_j))
     
     for i in range(rows):
         for j in range(cols):
-            bfs(sr, sc)
+            bfs(i, j)
     return visited
 
 
-        
-        
-image = [[1,1,1],[1,1,0],[1,0,1]]
-sr = 1
-sc = 1
-color = 2
 
-print(floodFill(image, sr,sc, color))
+
+
+        
+        
+mat = [[1,1], [1,0]]
+
+print(breadthFirstSearch(mat))
 
 
