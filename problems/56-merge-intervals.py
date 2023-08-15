@@ -1,6 +1,6 @@
 class Solution:
-    def merge(self, intervals: List[List[int]]) -> List[List[int]]:
-        #sort based on start time
+    def merge(self, intervals):
+        #sort based on start time  
         intervals.sort(key = lambda x: x[0])
         output = [intervals[0]]
 
