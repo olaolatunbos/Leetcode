@@ -1,5 +1,5 @@
 class Solution:
-    def search(self, nums: List[int], target: int) -> int:
+    def search(self, nums, target: int) -> int:
         l, r = 0, len(nums) - 1
         while l <= r:
             mid = (l +r) // 2
@@ -21,3 +21,7 @@ class Solution:
                 else:
                     l = mid + 1
         return - 1
+    
+sol = Solution()
+
+print(sol.search([4,5,6,7,0,1,2], 7))
