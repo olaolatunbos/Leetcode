@@ -1,17 +1,33 @@
-store = {"foo" : [["bar", 1],  ["bar1", 2],  ["bar3", 3], ["bar4", 4], ["bar5", 5]]}
-values = store.get("foo", [])
-print(values)
+from collections import deque
 
-def bs(nums, time):
-    l, r = 0, len(values) - 1
-    while l <= r:
-        mid = (l + r) // 2
-        if values[mid][1] < time:
-            l = mid + 1
-        elif values[mid][1] > time:
-            r = mid + 1
-        else:
-            return values[mid][0]
-    return -1
+class TreeNode(object):
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
 
-print(bs(values, 2))
+def bs(root):
+    output = []
+
+    queue = deque()
+    queue.append(root)
+
+    while queue:
+        level = []
+        for _ in range(len(queue)):
+            cur_node = queue.popleft()
+            queue.append(root.left)
+            queue.append(root.right)
+            level.append(cur_node.val)
+        output.append(level)
+    return output
+
+node1 = TreeNode()
+node2 = TreeNode()
+node3 = TreeNode()
+
+node1.left(node2)
+node1.right(node2)
+
+print(bs(node1))
+
