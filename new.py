@@ -1,13 +1,9 @@
-temperatures = [73,74,75,69,71,72]
+def myAtoi(s):
+        new = ""
+        for c in s:
+            if c.isdigit or c == "-":
+                new += c
 
-stack = []
-output = []
-for i, t in enumerate(temperatures):
-    if stack:
-        while stack:
-            if t > stack[-1][1]:
-                output.append([i - stack[-1][0]])
-                stack.pop()
-    else:
-        stack.append([i, t])
-print(output)
+        return new
+
+print(myAtoi("wit words 123"))
