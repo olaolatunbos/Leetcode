@@ -13,6 +13,8 @@ class Solution(object):
             for i in range(top, bottom):
                 res.append(matrix[i][right - 1])
             right -= 1
+
+            # if matrix is only a row or col
             if not (left < right and top < bottom):
                 break
             # get every i in the bottom row
