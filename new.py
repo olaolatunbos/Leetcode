@@ -1,9 +1,7 @@
-def myAtoi(s):
-        new = ""
-        for c in s:
-            if c.isdigit or c == "-":
-                new += c
+import itertools
 
-        return new
+s = "abc"
+print(list(itertools.repeat(10, 10)))
 
-print(myAtoi("wit words 123"))
+
+    
