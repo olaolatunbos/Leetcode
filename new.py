@@ -1,14 +1,10 @@
-# import collections
-# dit = {"ola": 21}
+nums = [0,0,1,1,1,2,2,3,3,4]
+l, r = 0, 1
+while r < len(nums):
+    if nums[l] == nums[r]:
+        nums.remove(nums[l])
+    l += 1
+    r += 1
 
-# dit["john"] = 12
-# print(dit["man"])
-    
-# d = collections.defaultdict(int)
+print(nums)
 
-# d["ola"] = 12
-# print(d["john"])
-
-
-import calendar
-print(calendar.TextCalendar(firstweekday=6).formatyear(2015))
